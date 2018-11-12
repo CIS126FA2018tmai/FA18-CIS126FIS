@@ -1,0 +1,33 @@
+#testScore
+count=0
+loop=1
+testScoreNumber=0
+totalScore=0
+avgScore=0
+while loop==1:
+  testScore=input("Enter your test score:")
+  try:
+    testScoreNumber=int(testScore)
+    if 0 <= testScoreNumber <= 100:
+      count+=1
+      totalScore+= testScoreNumber
+      avgScore=float(totalScore/count)
+      print("Your average score :",round(avgScore,2))
+      if 90<= avgScore<=100:
+        print("Your Grade is A")
+      elif 80<= avgScore<90:
+       print("Your Grade is B")
+      elif 70<= avgScore<80:
+       print("Your Grade is C")
+      elif 60<= avgScore<70:
+       print("Your Grade is D")
+      else:
+        print("Your Grade is F")
+    else:
+      print("Please enter a number from 0 to 100")
+  except ValueError:
+    if testScore=="exit":
+      loop=0
+      print("You exit the program!")
+    else:
+      print("You enter wrong format!")
